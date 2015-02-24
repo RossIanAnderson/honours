@@ -96,8 +96,8 @@ $( document ).ready(function() {
 	    loadContent( $getPage );
 	    
 	    if( $(this).data('next') === 3 ){
-		    $('footer button').detach();
-		    $('footer').html('<button class="pull-right" form="questionnaire-form" type="submit">Finish</button>');
+		    $('footer button').remove();
+		    $('footer').append('<button class="pull-right" form="questionnaire-form" type="submit">Finish</button>');
 	    }
 	    else {
 	    	$(this).data('next', $nextPage);
