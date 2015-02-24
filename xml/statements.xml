@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<options>
+	<option>
+		<statement>You find the user interface to be...</statement>
+		<positive>Enjoyable</positive>
+		<negative>Annoying</negative>
+	</option>
+	<option>
+		<statement>You find the user interface to be...</statement>
+		<positive>Good</positive>
+		<negative>Bad</negative>
+	</option>
+</options>
