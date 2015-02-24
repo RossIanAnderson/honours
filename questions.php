@@ -1,7 +1,7 @@
 <?php require_once 'core/init.php'; ?>
 <?php require_once 'core/template/header.inc.php'; ?>
 		
-			<div class="col pull-left"><button class="pull-right" form="questionnaire-form" type="submit">Finish</button></div>
+			<div class="col pull-left"></div>
 
 			<div class="col right">
 				<header class="clear">
