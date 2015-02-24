@@ -83,10 +83,15 @@ button:hover {
 	overflow: auto;
 }
 
-.questionnaire .questionnaire-header {
+.questionnaire .questionnaire-header,
+.questionnaire .questionnaire-selections h5 {
 	background: #ecf0f1;
 	padding: 20px;
 	color: #95a5a6;
+}
+
+.questionnaire .questionnaire-selections h5:first-of-type {
+	padding-top: 0px;
 }
 
 .questionnaire-selections .questionnaire-selection {

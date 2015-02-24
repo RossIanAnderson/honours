@@ -89,24 +89,30 @@ $( document ).ready(function() {
     
     loadContent(1);
     
-    $('footer button').click(function(){
+    $('footer button[data-next]').click(function(){
 	    var $getPage = $(this).data('next'),
 	    	$nextPage = $getPage + 1;
-	    		    
+			
 	    loadContent( $getPage );
-	    $(this).data('next', $nextPage);
 	    
+	    if( $(this).data('next') === 3 ){
+		    $('footer button').detach();
+		    $('footer').html('<button class="pull-right" form="questionnaire-form" type="submit">Finish</button>');
+	    }
+	    else {
+	    	$(this).data('next', $nextPage);
+	    }
     });
     
-		$(document).delegate('input[type="range"]', 'change', function(){
-			var $name = $(this).data( 'name' ),
-				$val  = $(this).val();
-			
-			$('#questionnaire-form').find('input[type="hidden"]').each(function(){
-				if( $(this).attr('name') === $name ){
-					$(this).val( $val );
-				}
-			});
+	$(document).delegate('input[type="range"]', 'change', function(){
+		var $name = $(this).data( 'name' ),
+			$val  = $(this).val();
+		
+		$('#questionnaire-form').find('input[type="hidden"]').each(function(){
+			if( $(this).attr('name') === $name ){
+				$(this).val( $val );
+			}
 		});
+	});
     
 });

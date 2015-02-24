@@ -1,8 +1,7 @@
 <?php require_once 'core/init.php'; ?>
 <?php require_once 'core/template/header.inc.php'; ?>
 		
-			<div class="col pull-left"></div>
-
+			<div class="col pull-left"><button class="pull-right" form="questionnaire-form" type="submit">Finish</button></div>
 
 			<div class="col right">
 				<header class="clear">
@@ -16,9 +15,9 @@
 					</div>
 				</section>
 				<footer>
-					<form id="questionnaire-form" action="" method="post">
+					<form id="questionnaire-form" action="completed.php" method="post">
 						<?php
-							for ($x=1; $x<=27; $x++) {
+							for ($x=1; $x<=26; $x++) {
 								echo '<input type="hidden" name="statement' . $x . '" value="">';
 							} 
 						?>
