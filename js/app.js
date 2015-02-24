@@ -84,7 +84,7 @@ $( document ).ready(function() {
 			$loadingTemplate = "<div class=\"questionnaire-loading\"><h1>Loading Content</h1><div><i class=\"fa fa-spinner fa-pulse\"></i></div><h3>Please Wait</h3></div>";
 			
 	    $section.html($loadingTemplate);
-	    $section.load('core/includes/questionnaire/' + $file + '.html');
+	    $section.load('core/includes/questionnaire/page' + $file + '.html');
     }
     
     loadContent(1);
@@ -94,20 +94,19 @@ $( document ).ready(function() {
 	    	$nextPage = $getPage + 1;
 	    		    
 	    loadContent( $getPage );
-	    
 	    $(this).data('next', $nextPage);
 	    
     });
     
-	$(document).delegate('input[type="range"]', 'change', function(){
-		var $name = $(this).data( 'name' ),
-			$val  = $(this).val();
-		
-		$('#questionnaire-form').find('input[type="hidden"]').each(function(){
-			if( $(this).attr('name') === $name ){
-				$(this).val( $val );
-			}
+		$(document).delegate('input[type="range"]', 'change', function(){
+			var $name = $(this).data( 'name' ),
+				$val  = $(this).val();
+			
+			$('#questionnaire-form').find('input[type="hidden"]').each(function(){
+				if( $(this).attr('name') === $name ){
+					$(this).val( $val );
+				}
+			});
 		});
-	});
     
 });

@@ -17,12 +17,11 @@
 				</section>
 				<footer>
 					<form id="questionnaire-form" action="" method="post">
-						<input type="hidden" name="statementOne" value="">
-						<input type="hidden" name="statementTwo" value="">
-						<input type="hidden" name="statementThree" value="">
-						<input type="hidden" name="statementFour" value="">
-						<input type="hidden" name="statementFive" value="">
-						<input type="hidden" name="statementSix" value="">
+						<?php
+							for ($x=1; $x<=27; $x++) {
+								echo '<input type="hidden" name="statement' . $x . '" value="">';
+							} 
+						?>
 					</form>
 					<button data-next="2" class="pull-right">Next</button>
 				</footer>
