@@ -24,6 +24,18 @@
 				<option value="4">Prefer to not say</option>
 			</select>
 		</div>
+		<div class="custom-select">
+			<select name="sm-usage">
+				<option disabled selected value="0">Social media usage</option>
+				<option value="1">Multiple minutes in an hour</option>
+				<option value="2">A few minutes an hour</option>
+				<option value="3">Once an hour</option>
+				<option value="4">Every few hours in a day</option>
+				<option value="5">Less than every few hours in a day</option>
+				<option value="6">Never</option>
+			</select>
+		</div>
+
 		<p class="error"></p>
 		<button type="submit">Submit</button>
 	</form>

@@ -14,12 +14,21 @@
 	$sexArr = array('err', 'female', 'male', 'other', 'prefer to not say');
 	$ageVal = @(int)$_POST['age'];
 	$sexVal = @(int)$_POST['sex'];
+	$smVal = @(int)$_POST['sm'];
 	$age = $ageArr[ $ageVal ];
 	$sex = $sexArr[ $sexVal ];
 	
-	if( $ageVal === 0 || $sexVal === 0 ){
-		output('Error', 'Please choose and option from each dropdown.');
+	if( $ageVal === 0 || $sexVal === 0 || $smVal === 0 ){
+		output(0, 'Please choose and option from each dropdown.');
 	}	
 	else {
-		output('Success', 'All choices');
+		// Set sessions
+		$userInfo = array(
+			"age" => $ageVal,
+			"sex" => $sexVal,
+			"sm"  => $smVal
+		);
+		output(1, $userInfo);
+		//$_SESSION['userInfo'] = $userInfo;
+		//output(1, 'Success');
 	}

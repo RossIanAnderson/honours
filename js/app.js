@@ -17,26 +17,41 @@ $( document ).ready(function() {
 		var $userInfo = $('.user-info'), 
 			$age = $userInfo.find('select[name="age"] option:selected').val(),
 			$sex = $userInfo.find('select[name="sex"] option:selected').val(),
+			$sm = $userInfo.find('select[name="sm-usage"] option:selected').val(),
 			$errorP = $userInfo.find('p.error');	
 			
-					
+		$userInfo.find('.custom-select').each(function(){
+			$(this).removeClass('error');
+		});
+		$errorP.html('');
+			
 		$.ajax({
 			type: 'POST',
 			url: 'core/includes/user-info.inc.php',
 			data: {
 				age: $age,
-				sex: $sex
+				sex: $sex,
+				sm:  $sm
 			},
 			dataType: 'json',
 			success: function( $data ){
-				console.log( $data.status + ': ' + $data.message );
+				$errorP.text( $data.message );
+				if( $data.status === 0 ){
+					$userInfo.find('select option:selected').each(function(){
+						if( $(this).val() === "0" ){
+							$(this).parent().parent().addClass('error');
+						}
+					});
+				}
+				else if( $data.status === 1 ){
+					//location.assign('questions.php');
+					console.log( $data.message ); 
+				}
 			},
 			error: function(){
 				$errorP.text('An error occured. Please try again later.');
 			}
-		
-		});
-	
+		});	
 		return false;
 	});
 	

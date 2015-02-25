@@ -14,7 +14,9 @@
 	echo "<pre>";
 	print_r($statements);
 	echo "</pre>"
-		
+	
 ?>
+
+<a class="btn" href="flush.php">Flush Sessions</a>
 		
 <?php require_once 'core/template/footer.inc.php'; ?>

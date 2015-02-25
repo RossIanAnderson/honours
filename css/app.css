@@ -65,6 +65,45 @@ button:hover {
 	border-left: 2px solid #6583BF;
 }
 
+.welcome {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin: -200px 0 0 -250px;
+	width: 500px;
+	z-index: 10;
+	background: #FFF;
+	/min-height: 300px;
+}
+
+.welcome h1 {
+	background:#3399cc;
+	padding:20px;
+	font-size:140%;
+	font-weight:700;
+	color:#fff;
+	margin: 0;
+}
+
+.welcome .welcome-content {
+	background:#f0f0f0;
+	padding: 25px 20px;
+}
+
+.welcome .welcome-content p {
+	margin-bottom: 20px;
+}
+
+.welcome .btn,
+.welcome button {
+	background: #3399cc;
+} 
+
+.welcome .btn:hover,
+.welcome button:hover {
+	background: #2288bb;
+}
+
 .questionnaire {
 	display: flex;
     flex-direction: row;
@@ -161,7 +200,6 @@ button:hover {
 	width: 400px;
 	z-index: 10;
 	display: none;
-	display: none;
 	box-shadow: 0 0 0 9999px rgba(0, 0, 0, 0.5),
 				0 10px 10px rgba(0,0,0,0.3);
 }
@@ -199,12 +237,14 @@ button:hover {
 	content: "\f00d";
 }
 
-.modal form {
-  background:#f0f0f0;
-  padding: 25px 20px;
+.modal form,
+.modal .modal-content {
+	background:#f0f0f0;
+	padding: 25px 20px;
 }
 
-.modal input, .modal .custom-select {
+.modal input,
+.modal .custom-select {
 	display: block;
 	background:#fff;
 	margin: 10px 0;
@@ -213,6 +253,11 @@ button:hover {
 	color:#555;
 	width: 100%;
 	transition: border-color 0.5, box-shadow 0.5;
+}
+
+.modal input.error,
+.modal .custom-select.error {
+	border-color: #c0392b;
 }
 
 .modal .custom-select select {
@@ -228,6 +273,14 @@ button:hover {
 .modal p {
 	margin: 0 0 20px;
 	text-align: center;
+}
+
+.modal ol {
+	margin-left: 20px;
+}
+
+.modal li {
+	margin-bottom: 10px;
 }
 
 .modal p.error {
