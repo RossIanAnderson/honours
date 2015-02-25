@@ -5,8 +5,7 @@ $( document ).ready(function() {
     $('[data-toggle]').each(function(){
 	    $(this).click(function(){
 		    var $toggle = $(this).data('toggle');
-			
-			//$('.modal').not('[data-toggle="' + $toggle + '"]').hide();
+
 		    $(document).find($toggle).fadeToggle('0.1s');
 	    });
     });
@@ -45,7 +44,6 @@ $( document ).ready(function() {
 				}
 				else if( $data.status === 1 ){
 					location.assign('questions.php');
-					//console.log( $data.message ); 
 				}
 			},
 			error: function(){
@@ -56,14 +54,17 @@ $( document ).ready(function() {
 	});
 	
 	
-	// Admin Login AJAX
+	// Admin login
 	
 	$('.admin-login').find('[type="submit"]').click(function(){
 		var $login = $('.admin-login'), 
 			$username = $login.find('input[name="u"]').val(),
 			$password = $login.find('input[name="p"]').val(),
 			$errorP = $login.find('p.error');
-		
+	
+		$login.find('input').each(function(){
+			$(this).removeClass('error');
+		});
 		$errorP.text('');
 		
 		$.ajax({
@@ -75,17 +76,22 @@ $( document ).ready(function() {
 			},
 			dataType: 'json',
 			success: function( $data ){
-				if( $data.status === 'success' ){
-					console.log( $data.message );
+				if( $data.status === 0 ){
+					$errorP.text( $data.message );
+					$login.find('input').each(function(){
+						$(this).addClass('error');
+					});
 				}
-				else if( $data.status === 'fail' ){
+				else if( $data.status === 1 ){
+					location.assign('admin.php');
+				}
+				else if( $data.status === 2 ){
 					$errorP.text( $data.message );
 				}
 			},
 			error: function(){
 				$errorP.text('An error occured. Please try again later.');
 			}
-			
 		});
 		return false;
 	});

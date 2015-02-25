@@ -1,7 +1,7 @@
 <div class="modal user-info">
 	<h1>Before we can begin</h1>
 	<div class="modal-close" data-toggle=".user-info"></div>
-	<form method="post" action="">
+	<form method="post" action>
 		<p>I'm going to need a little information from you</p>
 		<div class="custom-select">
 			<select name="age">

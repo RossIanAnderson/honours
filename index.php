@@ -1,7 +1,10 @@
 <?php require_once 'core/init.php'; ?>
 <?php require_once 'core/template/header.inc.php'; ?>
-
-
+<?php
+	if( !empty($_SESSION['userInfo']) || !empty($_SESSION['admin']) ){
+		redirect('flush.php');
+	}
+?>
 <div class="welcome">
 	<h1>Hello</h1>
 	<div class="welcome-content">
