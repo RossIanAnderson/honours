@@ -23,12 +23,13 @@
 	}	
 	else {
 		// Set sessions
+		session_start();
 		$userInfo = array(
 			"age" => $ageVal,
 			"sex" => $sexVal,
 			"sm"  => $smVal
 		);
-		output(1, $userInfo);
-		//$_SESSION['userInfo'] = $userInfo;
-		//output(1, 'Success');
+		//output(1, $userInfo);
+		$_SESSION['userInfo'] = $userInfo;
+		output(1, 'Success');
 	}

@@ -44,8 +44,8 @@ $( document ).ready(function() {
 					});
 				}
 				else if( $data.status === 1 ){
-					//location.assign('questions.php');
-					console.log( $data.message ); 
+					location.assign('questions.php');
+					//console.log( $data.message ); 
 				}
 			},
 			error: function(){

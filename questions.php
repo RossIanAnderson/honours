@@ -1,16 +1,12 @@
 <?php require_once 'core/init.php'; ?>
 <?php require_once 'core/template/header.inc.php'; ?>
-<?php
-	echo "<pre>";
-	print_r( $_SESSION['userInfo'] );
-	echo "</pre>";
-?>
+<?php restrictedQuestionnaire(); ?>
 	
 <div class="col pull-left"></div>
 
 <div class="col right">
 	<header class="clear">
-		<a href="exit.php" class="btn pull-right">Exit</a>
+		<a href="flush.php" class="btn pull-right">Quit</a>
 	</header>
 	<section class="questionnaire">
 		<div class="questionnaire-loading">
