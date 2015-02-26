@@ -1,9 +1,3 @@
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET time_zone = "+00:00";
-
-CREATE DATABASE IF NOT EXISTS `honours` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
-USE `honours`;
-
 CREATE TABLE `admin` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `username` varchar(255) NOT NULL,

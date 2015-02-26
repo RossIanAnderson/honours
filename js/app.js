@@ -16,7 +16,7 @@ $( document ).ready(function() {
 		var $userInfo = $('.user-info'), 
 			$age = $userInfo.find('select[name="age"] option:selected').val(),
 			$sex = $userInfo.find('select[name="sex"] option:selected').val(),
-			$sm = $userInfo.find('select[name="sm-usage"] option:selected').val(),
+			$usage = $userInfo.find('select[name="usage"] option:selected').val(),
 			$errorP = $userInfo.find('p.error');	
 			
 		$userInfo.find('.custom-select').each(function(){
@@ -30,7 +30,7 @@ $( document ).ready(function() {
 			data: {
 				age: $age,
 				sex: $sex,
-				sm:  $sm
+				usage:  $usage
 			},
 			dataType: 'json',
 			success: function( $data ){
@@ -52,7 +52,6 @@ $( document ).ready(function() {
 		});	
 		return false;
 	});
-	
 	
 	// Admin login
 	

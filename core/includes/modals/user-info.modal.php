@@ -25,7 +25,7 @@
 			</select>
 		</div>
 		<div class="custom-select">
-			<select name="sm-usage">
+			<select name="usage">
 				<option disabled selected value="0">Social media usage</option>
 				<option value="1">Multiple minutes in an hour</option>
 				<option value="2">A few minutes an hour</option>

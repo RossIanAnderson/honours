@@ -5,9 +5,9 @@
 		redirect('flush.php');
 	}
 ?>
-<div class="welcome">
+<div class="display">
 	<h1>Hello</h1>
-	<div class="welcome-content">
+	<div class="display-content">
 		<p>Thank you for taking the time to carry out this questionnaire.</p>
 		<p>The questionnaire consists of pairs of contrasting attributes that apply to the application. The slider between the attributes represent gradations between the opposites. You can express your agreement with the attributes by dragging the thumb of the slider toward the attribute that most closely reflects your impression.</p>
 		<p>I am well aware of how dull questionnaires can be but please persevere until the end.</p>

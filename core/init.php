@@ -2,6 +2,9 @@
 	
 	session_start();
 	ob_start();
+	
+	error_reporting(E_ALL);
+	ini_set('display_errors', 1);
 		
 	// Configuration
 	$db_config = array(
@@ -49,6 +52,23 @@
 				"message" => $message
 			)
 		);
+	}
+	
+	function format($what, $val){
+		switch($what) {
+			case 'age':
+				$ageArr = array('err', '12-17', '18-24', '25-34', '35-44', '45-54', '55-64', '65-74');
+				return $ageArr[$val];
+				break;
+			case 'sex':
+				$sexArr = array('err', 'female', 'male', 'other', 'prefer to not say');
+				return $sexArr[$val];
+				break;
+			case 'usage':
+				$usageArr = array('err', 'Multiple minutes in an hour', 'A few minutes an hour', 'Once an hour', 'Every few hours in a day', 'Less than every few hours in a day', 'Never');
+				return $usageArr[$val];
+				break;
+		}
 	}
 
 ?>

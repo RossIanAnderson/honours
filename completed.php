@@ -5,7 +5,6 @@
 <?php
 
 	$ageArr = array('err', '12-17', '18-24', '25-34', '35-44', '45-54', '55-64', '65-74');
-	$sexArr = array('err', 'female', 'male', 'other', 'prefer to not say');
 	$smArr = array('err', 'Multiple minutes in an hour', 'A few minutes an hour', 'Once an hour', 'Every few hours in a day', 'Less than every few hours in a day', 'Never');
 
 	$statements = array();
