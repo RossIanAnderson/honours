@@ -2,7 +2,11 @@
 <?php require_once 'core/template/header.inc.php'; ?>
 <?php restrictedQuestionnaire(); ?>
 	
-<div class="col pull-left"></div>
+<div class="col">
+	<div class="questionnaire-image-container">
+		<img src="img/facebook-profile.png" alt="Facebook Profile">
+	</div>
+</div>
 
 <div class="col right">
 	<header class="clear">

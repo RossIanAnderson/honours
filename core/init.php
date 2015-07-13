@@ -5,14 +5,14 @@
 	
 	error_reporting(E_ALL);
 	ini_set('display_errors', 1);
-		
+				
 	// Configuration
 	$db_config = array(
 		'driver' => 'mysql',
-		  'host' => 'localhost',
-		  'name' => 'honours',
-		  'user' => 'root',
-		  'pass' => 'root'
+		'host' => 'localhost',
+		'name' => 'honours',
+		'user' => 'root',
+		'pass' => 'root'
 	);
 	
 	// Connect	
@@ -70,5 +70,59 @@
 				break;
 		}
 	}
+	
+	function  countParticipants($db){
+		$sql = "SELECT COUNT(id) FROM responses";
+		
+		$query = $db->prepare( $sql );
+		$query->execute();
+		$result = $query->fetchColumn();
+						
+		return $result;
+	}
 
+	function getResponses($db, $what, $responseNum){
+		$sql = "SELECT " . $what . "(response" . $responseNum . ") FROM responses";
+		
+		$query = $db->prepare( $sql );
+		$query->execute();
+		$results = $query->fetchAll( PDO::FETCH_ASSOC );
+		
+		$result = $results[0][$what . '(response' . $responseNum . ')'];
+				
+		return round($result);
+	}
+
+	function getResponse($db, $responseNum){
+		$sql = "SELECT response" . $responseNum . " as response FROM responses";
+		
+		$query = $db->prepare( $sql );
+		$query->execute();
+		$results = $query->fetchAll( PDO::FETCH_ASSOC );				
+		
+		return $results;
+	}
+
+	function getValues($db, $what){
+		
+		$sql = "SELECT " . $what . " AS what, COUNT(*) AS count FROM responses GROUP BY " . $what . " ORDER BY count DESC";
+		
+		$query = $db->prepare( $sql );
+		$query->execute();
+		$results = $query->fetchAll( PDO::FETCH_ASSOC );
+		
+		return json_encode($results);
+	}
+	
+	
+	function checkIE(){
+		
+		if (preg_match('~MSIE|Internet Explorer~i', $_SERVER['HTTP_USER_AGENT']) || (strpos($_SERVER['HTTP_USER_AGENT'], 'Trident/7.0; rv:11.0') !== false)) {
+			return true;
+		}
+		else {
+			return false;
+		}
+	}
+	
 ?>

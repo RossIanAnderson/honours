@@ -12,8 +12,8 @@
 			$statements[$x] = $statements[$x] > 70 ? 70 : $statements[$x];
 		}
 		
-		$sql = "INSERT INTO responses(`id`, `age`, `sex`, `usage`, `response1`, `response2`, `response3`, `response4`, `response5`, `response6`, `response7`, `response8`, `response9`, `response10`, `response11`, `response12`, `response13`, `response14`, `response15`, `response16`, `response17`, `response18`, `response19`, `response20`, `response21`, `response22`, `response23`, `response24`, `response25`, `response26` )
-				VALUES('', :age, :sex, :usage, :response1, :response2, :response3, :response4, :response5, :response6, :response7, :response8, :response9, :response10, :response11, :response12, :response13, :response14, :response15, :response16, :response17, :response18, :response19, :response20, :response21, :response22, :response23, :response24, :response25, :response26 )";
+		$sql = "INSERT INTO responses(`id`, `age`, `sex`, `amount`, `response1`, `response2`, `response3`, `response4`, `response5`, `response6`, `response7`, `response8`, `response9`, `response10`, `response11`, `response12`, `response13`, `response14`, `response15`, `response16`, `response17`, `response18`, `response19`, `response20`, `response21`, `response22`, `response23`, `response24`, `response25`, `response26` )
+				VALUES('', :age, :sex, :amount, :response1, :response2, :response3, :response4, :response5, :response6, :response7, :response8, :response9, :response10, :response11, :response12, :response13, :response14, :response15, :response16, :response17, :response18, :response19, :response20, :response21, :response22, :response23, :response24, :response25, :response26 )";
 		
 		$query = $db->prepare( $sql );
 		
@@ -21,7 +21,7 @@
 			array(
 				':age'	=>$_SESSION['userInfo']['age'],
 				':sex'	=>$_SESSION['userInfo']['sex'],
-				':usage'=>$_SESSION['userInfo']['usage'],
+				':amount'=>$_SESSION['userInfo']['usage'],
 				':response1'=>$statements[1],
 				':response2'=>$statements[2],
 				':response3'=>$statements[3],
@@ -59,7 +59,7 @@
 	<h1>Thank You!</h1>
 	<div class="display-content">
 		<p>Thank you so much for making it all the way to the end.</p>
-		<a href="flush.php" class="btn">Bye!</a>
+		<a href="flush" class="btn">Bye!</a>
 	</div>
 </div>
 		
